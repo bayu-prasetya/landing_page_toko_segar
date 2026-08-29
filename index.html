@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Segar Pagi — Buah Lokal Antar Hari Ini</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="brand">
+      <span class="brand-mark">🍊</span>
+      <span class="brand-name">Segar Pagi</span>
+    </div>
+    <nav class="nav-links">
+      <a href="#produk">Produk</a>
+      <a href="#kenapa">Kenapa Kami</a>
+      <a href="#testimoni">Cerita Pelanggan</a>
+      <a href="#pesan" class="nav-cta">Pesan Sekarang</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Buka menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-text">
+      <p class="eyebrow">Petik pagi ini, sampai sore ini</p>
+      <h1>Buah segar dari kebun,<br>langsung ke meja makanmu.</h1>
+      <p class="hero-sub">Kami ambil langsung dari petani lokal setiap subuh. Tidak ada gudang, tidak ada buah nginap berhari-hari — cuma yang benar-benar matang di pohon.</p>
+      <div class="hero-actions">
+        <a href="#produk" class="btn btn-primary">Lihat Buah Hari Ini</a>
+        <a href="#kenapa" class="btn btn-ghost">Kenapa Segar Pagi?</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><strong id="statPetani">40+</strong><span>Petani mitra</span></div>
+        <div class="stat"><strong id="statKota">6</strong><span>Kota terjangkau</span></div>
+        <div class="stat"><strong id="statJam">&lt;12</strong><span>Jam dari kebun</span></div>
+      </div>
+    </div>
+
+    <div class="hero-art" aria-hidden="true">
+      <svg viewBox="0 0 420 420" class="basket-svg">
+        <ellipse cx="210" cy="360" rx="150" ry="18" class="basket-shadow"/>
+        <path d="M70 220 L110 360 L310 360 L350 220 Z" class="basket-body"/>
+        <path d="M70 220 L350 220 L340 250 L80 250 Z" class="basket-rim"/>
+        <path d="M110 220 Q120 190 140 220" class="basket-weave"/>
+        <path d="M160 220 Q170 190 190 220" class="basket-weave"/>
+        <path d="M210 220 Q220 190 240 220" class="basket-weave"/>
+        <path d="M260 220 Q270 190 290 220" class="basket-weave"/>
+        <path d="M310 220 Q320 190 340 220" class="basket-weave"/>
+        <circle cx="150" cy="190" r="42" class="fruit fruit-orange"/>
+        <circle cx="230" cy="175" r="50" class="fruit fruit-apple"/>
+        <ellipse cx="290" cy="205" rx="30" ry="34" class="fruit fruit-pear"/>
+        <circle cx="185" cy="150" r="26" class="fruit fruit-grape"/>
+        <circle cx="270" cy="155" r="20" class="fruit fruit-grape-sm"/>
+        <path d="M230 125 Q235 110 250 108" class="leaf-stem"/>
+        <ellipse cx="255" cy="105" rx="16" ry="9" class="leaf" transform="rotate(-25 255 105)"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- MARQUEE STRIP -->
+  <div class="strip">
+    <div class="strip-track">
+      <span>🍓 Panen Hari Ini</span><span>🥭 Mangga Harum Manis</span><span>🍇 Anggur Import</span><span>🍊 Jeruk Medan</span><span>🍍 Nanas Madu</span>
+      <span>🍓 Panen Hari Ini</span><span>🥭 Mangga Harum Manis</span><span>🍇 Anggur Import</span><span>🍊 Jeruk Medan</span><span>🍍 Nanas Madu</span>
+    </div>
+  </div>
+
+  <!-- PRODUK -->
+  <section class="produk" id="produk">
+    <div class="section-head">
+      <p class="eyebrow">Papan Harga Hari Ini</p>
+      <h2>Yang sedang panen minggu ini</h2>
+      <p class="section-sub">Harga berubah tiap hari mengikuti panen — ini update pagi ini.</p>
+    </div>
+
+    <div class="produk-filter" id="produkFilter">
+      <button class="filter-btn active" data-filter="semua">Semua</button>
+      <button class="filter-btn" data-filter="lokal">Lokal</button>
+      <button class="filter-btn" data-filter="import">Import</button>
+      <button class="filter-btn" data-filter="musiman">Musiman</button>
+    </div>
+
+    <div class="produk-grid" id="produkGrid"></div>
+  </section>
+
+  <!-- KENAPA -->
+  <section class="kenapa" id="kenapa">
+    <div class="section-head">
+      <p class="eyebrow">Beda Kami</p>
+      <h2>Bukan cuma "jualan buah"</h2>
+    </div>
+    <div class="kenapa-grid">
+      <article class="kenapa-card">
+        <div class="kenapa-icon">🌅</div>
+        <h3>Dipetik subuh, dikirim siang</h3>
+        <p>Kami putus rantai gudang. Buah dari kebun mitra langsung dikemas dan dikirim hari yang sama.</p>
+      </article>
+      <article class="kenapa-card">
+        <div class="kenapa-icon">🤝</div>
+        <h3>Langsung dari petani</h3>
+        <p>Harga lebih adil untuk petani, harga lebih masuk akal untuk kamu — tanpa tengkulak berlapis.</p>
+      </article>
+      <article class="kenapa-card">
+        <div class="kenapa-icon">↩️</div>
+        <h3>Ganti kalau kurang segar</h3>
+        <p>Kalau buah sampai kurang matang atau rusak di jalan, tinggal foto dan kami ganti tanpa ribet.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- TESTIMONI -->
+  <section class="testimoni" id="testimoni">
+    <div class="section-head">
+      <p class="eyebrow">Kata Mereka</p>
+      <h2>Cerita dari dapur pelanggan</h2>
+    </div>
+    <div class="testi-track">
+      <blockquote class="testi-card">
+        <p>"Anaknya yang biasa nolak buah, sekarang malah minta jeruk Segar Pagi lagi tiap sore."</p>
+        <cite>— Ratna, Tangerang</cite>
+      </blockquote>
+      <blockquote class="testi-card">
+        <p>"Mangganya beneran manis, bukan yang dipetik muda terus dikarbit. Ketauan bedanya."</p>
+        <cite>— Dimas, Bekasi</cite>
+      </blockquote>
+      <blockquote class="testi-card">
+        <p>"Langganan tiap minggu buat stok kantor. Selalu sampai sebelum jam makan siang."</p>
+        <cite>— Ayu, Jakarta Selatan</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- CTA / PESAN -->
+  <section class="pesan" id="pesan">
+    <div class="pesan-inner">
+      <h2>Keranjangmu menunggu diisi.</h2>
+      <p>Tulis nomor WhatsApp, kami kabari kalau area kamu sudah bisa kirim hari ini.</p>
+      <form id="pesanForm" class="pesan-form">
+        <input type="tel" id="nomorWA" placeholder="08xx xxxx xxxx" required pattern="[0-9+ ]{8,15}">
+        <button type="submit" class="btn btn-primary">Cek Ketersediaan</button>
+      </form>
+      <p class="pesan-note" id="pesanNote" aria-live="polite"></p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="brand">
+      <span class="brand-mark">🍊</span>
+      <span class="brand-name">Segar Pagi</span>
+    </div>
+    <p class="footer-note">Halaman contoh untuk keperluan pembelajaran di kelas. Bukan toko sungguhan.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
