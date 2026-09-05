@@ -1,13 +1,13 @@
 // ---------- Data produk ----------
 const produkList = [
-  { nama: "Jeruk Medan", emoji: "🍊", kategori: "lokal", harga: 25000, unit: "/ kg" },
-  { nama: "Mangga Harum Manis", emoji: "🥭", kategori: "lokal", harga: 32000, unit: "/ kg" },
-  { nama: "Anggur Muscat", emoji: "🍇", kategori: "import", harga: 68000, unit: "/ 500g" },
-  { nama: "Nanas Madu", emoji: "🍍", kategori: "musiman", harga: 15000, unit: "/ buah" },
-  { nama: "Strawberry Lembang", emoji: "🍓", kategori: "lokal", harga: 24000, unit: "/ box" },
-  { nama: "Apel Fuji", emoji: "🍎", kategori: "import", harga: 42000, unit: "/ kg" },
-  { nama: "Pepaya California", emoji: "🍈", kategori: "lokal", harga: 12000, unit: "/ buah" },
-  { nama: "Duren Musang King", emoji: "🥭", kategori: "musiman", harga: 95000, unit: "/ kg" },
+  { nama: "Jeruk Medan", emoji: "img/jeruk.png", kategori: "lokal", harga: 25000, unit: "/ kg" },
+  { nama: "Mangga Harum Manis", emoji: "img/mangga.jfif", kategori: "lokal", harga: 32000, unit: "/ kg" },
+  { nama: "Anggur Muscat", emoji: "img/anggur.png", kategori: "import", harga: 68000, unit: "/ 500g" },
+  { nama: "Nanas Madu", emoji: "img/nanas.png", kategori: "musiman", harga: 15000, unit: "/ buah" },
+  { nama: "Strawberry Lembang", emoji: "img/strawberry.png", kategori: "lokal", harga: 24000, unit: "/ box" },
+  { nama: "Apel Fuji", emoji: "img/apel.png", kategori: "import", harga: 42000, unit: "/ kg" },
+  { nama: "Pepaya California", emoji: "img/papaya.png", kategori: "lokal", harga: 12000, unit: "/ buah" },
+  { nama: "Duren Musang King", emoji: "img/durian.png", kategori: "musiman", harga: 95000, unit: "/ kg" },
 ];
 
 const formatRupiah = (n) =>
@@ -22,7 +22,7 @@ function renderProduk(filter = "semua") {
     const card = document.createElement("article");
     card.className = "produk-card" + (cocok ? "" : " hidden");
     card.innerHTML = `
-      <div class="produk-emoji" aria-hidden="true">${p.emoji}</div>
+      <img class="produk-gambar" src="${p.emoji}">
       <span class="produk-tag">${p.kategori}</span>
       <h3>${p.nama}</h3>
       <div class="produk-price-board">
@@ -76,6 +76,11 @@ pesanForm.addEventListener("submit", (e) => {
 
   if (nomor.length < 8) {
     pesanNote.textContent = "Nomor WhatsApp sepertinya belum lengkap.";
+    pesanNote.className = "pesan-note err";
+    return;
+  }
+  if (nomor.startsWith("0")) {
+    pesanNote.textContent = "Nomor harus diawali dengan '0.'";
     pesanNote.className = "pesan-note err";
     return;
   }
